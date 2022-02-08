@@ -1,0 +1,46 @@
+﻿@model ApiYoutube.Models.YoutubePlayLists
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@*Play List 1*@
+<div class="row justify-content-center">
+    <div class="col-12 mb-0 text-center">
+        <label class="font-weight-bold h3">Play list 1</label>
+    </div>
+    <div class="col-12 text-center">
+        @foreach (var item in Model.PlayList1)
+        {
+            <div class="card" onclick="window.open('http://youtube.com/watch?v=@item.VideoId')">
+                <div class="card__image-holder">
+                    <img class="card__image" src="@item.Thumbnail" />
+                </div>
+                <div class="card-title">
+                    <h5>@item.Title</h5>
+                    <h6>@item.PublicationDate</h6>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*Play List 2*@
+<div class="row justify-content-center">
+    <div class="col-12 text-center h3">
+        <label class="font-weight-bold">Play list 2</label>
+    </div>
+    <div class="col-12 text-center">
+        @foreach (var item in Model.PlayList2)
+        {
+            <div class="card" onclick="window.open('http://youtube.com/watch?v=@item.VideoId')">
+                <div class="card__image-holder">
+                    <img class="card__image" src="@item.Thumbnail" />
+                </div>
+                <div class="card-title">
+                    <h5>@item.Title</h5>
+                    <h6>@item.PublicationDate</h6>
+                </div>
+            </div>
+        }
+    </div>
+</div>
